@@ -1,0 +1,84 @@
+<template>
+    <div class="container slds-border_bottom">
+        <div class="slds-m-around_small">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-12">
+                    <div class="task-title">
+                        <lightning-icon icon-name="utility:user" size="medium"></lightning-icon> &nbsp;
+                    </div>
+                </div>
+                <div class="slds-col slds-size_11-of-12">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_8-of-12 slds-text-heading_small">
+                            <a href={task.taskURL}>{task.task.Subject}</a>
+                        </div>
+                        <div class="slds-col slds-size_4-of-12 slds-text-body_small textRight">
+                            <span class="pd-caption">{taskStatus} &nbsp;</span>
+                            <lightning-button-menu menu-alignment="auto" variant="bare" onselect={updateStatus}>
+                                <lightning-menu-item id="NotStarted" label="Not Started" value="Not Started">
+                                </lightning-menu-item>
+                                <lightning-menu-item id="InProgress" label="In Progress" value="In Progress">
+                                </lightning-menu-item>
+                                <lightning-menu-item id="Completed" label="Completed" value="Completed">
+                                </lightning-menu-item>
+                                <lightning-menu-item id="Waitingonsomeoneelse" label="Waiting on someone else" value="Waiting on someone else">
+                                </lightning-menu-item>
+                                <lightning-menu-item id="Deferred" label="Deferred" value="Deferred">
+                                </lightning-menu-item>
+                            </lightning-button-menu>
+                        </div>
+                    </div>
+                    <template if:true={task.task.wkcc__Location__r.Name}>
+                        <div>
+                            {task.task.wkcc__Location__r.Name}
+                        </div>
+                    </template>
+                    <template if:true={task.task.Description}>
+                        <div class="slds-text-body_small">
+                            <p>
+                                {task.task.Description}
+                            </p>
+                        </div>
+                    </template>
+                    <div class="slds-text-body_small pd-caption"><p><i>
+                        Added <lightning-formatted-date-time 
+                            value={task.task.CreatedDate}
+                            year="numeric"
+                            month="numeric"
+                            day="numeric"
+                            hour="2-digit"
+                            minute="2-digit"
+                            time-zone-name="short"
+                            ></lightning-formatted-date-time><br>
+                        Priority: {task.task.Priority}</i></p>
+                        <template if:true={task.pagerDutyIncident}>
+                            <p>PagerDuty Status:</p>
+                        </template>
+                    </div>
+                    <template if:true={task.pagerDutyIncident}>
+                        <div class="slds-box slds-box_x-small">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <p>
+                                        Status: &nbsp;
+                                        <template if:true={task.pagerDutyIncident.priority}>
+                                            <lightning-badge label={task.pagerDutyIncident.priority}></lightning-badge>
+                                        </template>
+                                        <lightning-badge label={task.pagerDutyIncident.status}></lightning-badge>
+                                    </p><p>
+                                        <template if:true={assigneesStr}>
+                                            Assigned to: {assigneesStr}
+                                        </template>
+                                    </p>
+                                </div>
+                                <div class="slds-col textRight">
+                                    <a href={task.pagerDutyIncident.html_url} target="_blank">Open in PagerDuty</a>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

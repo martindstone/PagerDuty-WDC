@@ -1,0 +1,19 @@
+p {
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    color: rgb(62, 62, 60);
+}
+.textRight {
+    text-align: right;
+}
+
+.pd-caption {
+    font-size: x-small;
+    font-style: italic;
+}
+
+.pd-tiny {
+    font-size: xx-small;
+    font-style: italic;
+    text-align: left;
+    vertical-align: top;
+}

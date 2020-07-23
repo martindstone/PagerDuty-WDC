@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Standard permission set to enable access to Workplace Command Center</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Workplace Command Center Standard PermSet - Admin - Full Access (Cloned)</label>
+    <license>WorkplaceCommandCenterPsl</license>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>WorkplaceCommandCenter</name>
+    </userPermissions>
+</PermissionSet>

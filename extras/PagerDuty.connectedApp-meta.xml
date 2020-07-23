@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>martin@pagerduty.com</contactEmail>
+    <label>PagerDuty</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost</callbackUrl>
+        <certificate>MIIDDjCCAfYCCQDiK/luDHWd0DANBgkqhkiG9w0BAQsFADBJMQswCQYDVQQGEwJVUzELMAkGA1UECAwCQ0ExFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xFTATBgNVBAMMDHdlYl9zaXRlLmNvbTAeFw0yMDAxMDIyMDQwMTFaFw0yMTAxMDEyMDQwMTFaMEkxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJDQTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzEVMBMGA1UEAwwMd2ViX3NpdGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0tLHmthBZl3hTA1HdM+dHnJ2i4rIW8GRwG6XlDymrhHtkhBR3Y1gbtVsuHAR1L+CTNaVPFcl66CoGeRzo9HKAzDG95swC4PqGsyz71sLK3ezQr9PdKveDsoE0Wpei3DsCGXwcYv+EXR89qVi6oUaFuBVjTi4JAuW2B7ylEjJb+hCwHgLEr/XlTtNi5d0uBmDiF5Z2FAk7NYQQW7KfaA/VnbNb7/Lg+5do2wwB9/5c49Lnghn2ywAGduedXWDxI1IwYEx30yF7181Lha45wrb7QPveY3BuY4yhAh08njD2xosPWOvSBHYdL7GXyEPArDunsF2EeIJTw+xN6uowbE/PwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCPdSxUncG9NCo7twGrf0DSNWTSXmQp5WQgXnEzYfkP59VZBPnHhMvDPYhv2kJmnqdLZGE6fR96/hOty/6eGX0PECIsz5/G5lSBqJkSWVYYPFO4rQlw2AwxVY/cf/C1vdb9tGo9OstkBB9rC8NUJr9d+RF3htvnO19RzF2PUh836RCzulp8nhWQ8VHIag7ioWTyIp0b0wb8n5/WFxjAX5udykzsqwj/iAm8VgHnoaa7z3kyksKnwMvF2GHxVOx9+2QgQEUH+Y0z9OS/8oZEM+UH206P6U/AkjjwI5ncY0sqtJTI91lxviUISaUNuQx+0cU7g+hpAGZ8m93H/yesDUgW</certificate>
+        <isAdminApproved>true</isAdminApproved>
+        <scopes>Api</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <profileName>Standard User</profileName>
+    <profileName>Service Cloud</profileName>
+    <profileName>System Administrator</profileName>
+</ConnectedApp>

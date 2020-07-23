@@ -1,0 +1,42 @@
+<template>
+    <lightning-card>
+        <template if:true={tasks.data}>
+            <div class="slds-m-around_small slds-text-heading_small">
+                {label} 
+                <lightning-button-menu variant="container" onselect={handleChange}>
+                    <template for:each={options} for:item="action">
+                        <lightning-menu-item
+                            id={action.label}
+                            label={action.label}
+                            value={action.value}
+                            key={action.label}>
+                        </lightning-menu-item>
+                    </template>
+                </lightning-button-menu>
+                <span class="textRight">
+                    <lightning-button-menu menu-alignment="auto">
+                        <lightning-menu-item prefix-icon-name="utility:open" id="viewTasks" label="View Tasks" value="viewTasks" href="/lightning/o/Task/list">
+                        </lightning-menu-item>
+                    </lightning-button-menu>
+                </span>
+                <template if:true={globalLocationName}>
+                    <div class="slds-m-left_xx-small slds-text-body_small grayText">
+                        <i>{globalLocationName}</i>
+                    </div>
+                </template>
+            </div>
+            <div class="slds-border_top slds-border_bottom slds-text-body_small">
+                <div class="slds-m-around_small">
+                    <i>{tasks.data.length} tasks</i>
+                </div>
+            </div>
+            <template for:each={tasks.data} for:item="task">
+                <c-pager-duty-task-detail 
+                    key={task.task.Id} 
+                    task={task}
+                >
+                </c-pager-duty-task-detail>
+            </template>
+        </template>
+    </lightning-card>
+</template>
